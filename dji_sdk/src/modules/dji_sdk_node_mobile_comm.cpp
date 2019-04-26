@@ -1,11 +1,11 @@
 /** @file dji_sdk_node_mobile_comm.cpp
- *  @version 3.3
- *  @date May, 2017
+ *  @version 3.7
+ *  @date July, 2018
  *
  *  @brief
  *  Implementation of the mobile communication functions of DJISDKNode
  *
- *  @copyright 2017 DJI. All rights reserved.
+ *  @copyright 2018 DJI. All rights reserved.
  *
  */
 
@@ -16,7 +16,7 @@ void DJISDKNode::SDKfromMobileDataCallback(Vehicle *vehicle, RecvContainer recvF
 }
 
 void DJISDKNode::fromMobileDataCallback(RecvContainer recvFrame) {
-  int dataLength = recvFrame.recvInfo.len - Protocol::PackageMin - 2;
+  int dataLength = recvFrame.recvInfo.len - OpenProtocol::PackageMin - 2;
   if (dataLength <= 100) {
     DSTATUS( "Received mobile Data of len %d\n", recvFrame.recvInfo.len);
     dji_sdk::MobileData mobile_data;

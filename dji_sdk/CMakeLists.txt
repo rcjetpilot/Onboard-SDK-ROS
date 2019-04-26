@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  sensor_msgs
 )
 find_package(DJIOSDK REQUIRED)
 
@@ -58,6 +59,8 @@ add_message_files(
   MissionWaypoint.msg
   MissionWaypointTask.msg
   MissionHotpointTask.msg
+  FlightAnomaly.msg
+  VOPosition.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -86,6 +89,10 @@ add_service_files(
   SendMobileData.srv
   SetHardSync.srv
   QueryDroneVersion.srv
+  Stereo240pSubscription.srv
+  StereoVGASubscription.srv
+  StereoDepthSubscription.srv
+  SetupCameraStream.srv
 )
 
 ## Generate added messages and services with any dependencies listed here
@@ -94,6 +101,7 @@ generate_messages(
   geometry_msgs
   nav_msgs
   std_msgs
+  sensor_msgs
 )
 
 ###################################
@@ -123,6 +131,7 @@ catkin_package(
 # include_directories(include)
 include_directories(
   include
+  ${DJIOSDK_INCLUDE_DIRS}
   ${catkin_INCLUDE_DIRS}
 )
 

@@ -1,11 +1,11 @@
 /** @file dji_sdk.h
- *  @version 3.3
- *  @date May, 2017
+ *  @version 3.7
+ *  @date July, 2018
  *
  *  @brief
  *  Definitions and Enums for client code to use dji_sdk ros wrapper
  *
- *  @copyright 2017 DJI. All rights reserved.
+ *  @copyright 2018 DJI. All rights reserved.
  *
  */
 
@@ -25,6 +25,16 @@ enum DroneFirmwareVersion
 {
   M100_31 = DJI::OSDK::Version::M100_31,
 };
+
+typedef enum AircraftVersion
+{
+  UNKNOWN,
+  M100,
+  M600,
+  A3,
+  N3,
+  M210
+} AircraftVersion;
 
 enum FlightControlFlag
 {
